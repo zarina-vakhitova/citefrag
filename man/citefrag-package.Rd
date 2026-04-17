@@ -57,7 +57,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Zarina Vakhitova \email{zarina.vakhitova@deakin.edu.au} (\href{https://orcid.org/0000-0002-2853-7968}{ORCID})
+\strong{Maintainer}: Zarina Vakhitova \email{zarina.vakhitova@monash.edu} (\href{https://orcid.org/0000-0003-2708-4585}{ORCID})
 
 }
 \keyword{internal}

@@ -6,8 +6,8 @@ Authors@R:
     person(given = "Zarina",
            family = "Vakhitova",
            role = c("aut", "cre"),
-           email = "zarina.vakhitova@deakin.edu.au",
-           comment = c(ORCID = "0000-0002-2853-7968"))
+           email = "zarina.vakhitova@monash.edu",
+           comment = c(ORCID = "0000-0003-2708-4585"))
 Description: Tools for measuring within-group versus between-group citation 
     preference in longitudinal journal panels. Provides the pair-averaged 
     within-cluster to between-cluster citation ratio under several 
