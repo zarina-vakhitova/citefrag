@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  citefrag-intro: citefrag-intro.html
+last_built: 2026-04-17T10:32Z
+urls:
+  reference: https://zarina-vakhitova.github.io/citefrag/reference
+  article: https://zarina-vakhitova.github.io/citefrag/articles

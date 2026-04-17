@@ -1,0 +1,84 @@
+# Compute the fragmentation ratio time series
+
+The central measurement function of the package. For each period in the
+panel, computes the pair-averaged within-group to between-group citation
+ratio under the requested normalisation, and returns the ratio series
+alongside supporting counts and an optional smoothed trajectory.
+
+## Usage
+
+``` r
+fragmentation_ratio(
+  panel,
+  normalise = c("raw", "row", "target", "article_pair"),
+  smooth = 3L
+)
+```
+
+## Arguments
+
+- panel:
+
+  A \`citation_panel\` object from \[citation_panel()\].
+
+- normalise:
+
+  Character, one of \`"raw"\`, \`"row"\`, \`"target"\`, or
+  \`"article_pair"\`. Default \`"raw"\`. See Details.
+
+- smooth:
+
+  Integer window length for centred moving-average smoothing of the
+  ratio. Default \`3L\`. Set to \`1L\` to disable smoothing.
+
+## Value
+
+An object of class \`fragmentation_ratio\` (inheriting from
+\`citefrag_result\`), which is a list with elements:
+
+- series:
+
+  A tibble with one row per period and columns \`period\`, \`n_nodes\`,
+  \`within_mean\`, \`between_mean\`, \`ratio\`, and \`ratio_smoothed\`.
+
+- config:
+
+  List recording \`normalise\`, \`smooth\`, and the call.
+
+- panel:
+
+  The input panel, for downstream use.
+
+## Details
+
+\*\*Normalisations.\*\* The \`"raw"\` option uses the citation counts as
+supplied. \`"row"\` divides each row of each matrix by its row sum
+before aggregation, so that every citing node contributes equally
+regardless of its publication volume. \`"target"\` additionally divides
+each cell by the size (for example, article count) of the cited node,
+controlling for differences in the size of citation targets.
+\`"article_pair"\` uses \\\Omega\_{ij} = C\_{ij} / (n_i \cdot n_j)\\
+directly, removing size effects on both sides simultaneously. The latter
+two require \`sizes\` to have been supplied when the panel was
+constructed.
+
+\*\*Smoothing.\*\* The \`ratio_smoothed\` column is a centred moving
+average computed in the observation domain, not a time-series filter; it
+is a cosmetic aid for plotting rather than a statistical operation. All
+significance testing uses the unsmoothed ratio.
+
+## See also
+
+\[fragmentation_test()\] for significance testing,
+\[fragmentation_changepoint()\] for structural break detection.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+data(criminology_panel)
+fr <- fragmentation_ratio(criminology_panel, normalise = "row")
+print(fr)
+plot(fr)
+} # }
+```
