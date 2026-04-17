@@ -1,0 +1,45 @@
+#' citefrag: Measuring Fragmentation in Longitudinal Citation Networks
+#'
+#' The citefrag package provides tools for measuring within-group versus
+#' between-group citation preference in longitudinal journal panels. It
+#' implements the pair-averaged fragmentation ratio with several
+#' normalisations, exact and Monte Carlo permutation tests, directional
+#' asymmetry analysis, a suite of robustness checks, and piecewise regression
+#' with bootstrap confidence intervals for locating structural breaks in
+#' ratio trajectories.
+#'
+#' @section Typical workflow:
+#' Construct a [citation_panel()] object from a list of annual citation
+#' matrices and a group vector. Compute the ratio series with
+#' [fragmentation_ratio()]. Test its statistical significance with
+#' [fragmentation_test()]. Check robustness with
+#' [fragmentation_robustness()]. Detect structural breaks with
+#' [fragmentation_changepoint()]. Each function returns an object with
+#' `print()`, `plot()`, `summary()`, and `as.data.frame()` methods.
+#'
+#' The convenience wrapper [fragmentation_analysis()] runs the full pipeline
+#' in one call and returns a list of the four result objects.
+#'
+#' @section The fragmentation ratio:
+#' For a citation matrix \eqn{C^{(t)}} observed in period \eqn{t}, with each
+#' node \eqn{i} assigned to a group \eqn{g(i)}, the pair-averaged
+#' within-between ratio is
+#' \deqn{R(t) = \frac{\frac{1}{|W_t|}\sum_{(i,j) \in W_t} C^{(t)}_{ij}}
+#'                   {\frac{1}{|B_t|}\sum_{(i,j) \in B_t} C^{(t)}_{ij}}}
+#' where \eqn{W_t} is the set of directed within-group pairs and \eqn{B_t}
+#' is the set of directed between-group pairs. Self-citations are excluded.
+#' A value of \eqn{R(t) = 1} indicates no within-group preference; values
+#' above one indicate that nodes cite within their own group more intensely
+#' than across group boundaries.
+#'
+#' @references
+#' Vakhitova, Z. (2026). The fragmentation of criminology: a longitudinal
+#' citation network analysis. *Manuscript in preparation.*
+#'
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+#' @importFrom rlang .data
+## usethis namespace: end
+NULL

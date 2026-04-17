@@ -1,0 +1,42 @@
+Package: citefrag
+Type: Package
+Title: Measuring Fragmentation in Longitudinal Citation Networks
+Version: 0.1.0
+Authors@R: 
+    person(given = "Zarina",
+           family = "Vakhitova",
+           role = c("aut", "cre"),
+           email = "zarina.vakhitova@deakin.edu.au",
+           comment = c(ORCID = "0000-0002-2853-7968"))
+Description: Tools for measuring within-group versus between-group citation 
+    preference in longitudinal journal panels. Provides the pair-averaged 
+    within-cluster to between-cluster citation ratio under several 
+    normalisations, exact and Monte Carlo permutation tests of statistical 
+    significance, directional asymmetry analysis between traditions, 
+    alternative-specification and fixed-subpanel robustness checks, and 
+    piecewise regression with bootstrap confidence intervals for locating 
+    structural breaks in ratio trajectories. Developed to accompany 
+    Vakhitova (2026) on the fragmentation of criminology; the machinery 
+    is general to any longitudinal node-by-node exchange network with 
+    a priori group labels.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 4.0.0)
+Imports: 
+    stats,
+    utils,
+    tibble,
+    ggplot2,
+    rlang
+Suggests: 
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    dplyr
+VignetteBuilder: knitr
+RoxygenNote: 7.3.2
+URL: https://github.com/zvakhitova/citefrag
+BugReports: https://github.com/zvakhitova/citefrag/issues
+Config/testthat/edition: 3

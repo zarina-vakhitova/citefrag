@@ -1,0 +1,10 @@
+^citefrag\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^data-raw$
+^README\.Rmd$
+^LICENSE\.md$
+^\.gitignore$
+^pkgdown$
+^docs$
+^_pkgdown\.yml$

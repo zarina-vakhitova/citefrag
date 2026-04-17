@@ -1,0 +1,98 @@
+---
+title: "Introduction to citefrag"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to citefrag}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5
+)
+```
+
+# Overview
+
+The `citefrag` package measures within-group versus between-group citation preference in longitudinal citation networks. This vignette walks through the full analytical pipeline using the bundled 23-journal criminology panel as an example. The same workflow applies to any citation panel with prior group assignments.
+
+# Setup
+
+```{r setup, message = FALSE}
+library(citefrag)
+data(criminology_panel)
+
+criminology_panel
+```
+
+The panel contains `r criminology_panel$n_periods` annual citation matrices for `r criminology_panel$n_nodes` journals, grouped into `r criminology_panel$n_groups` traditions.
+
+# Stage 1: The fragmentation ratio
+
+The central measurement of the package is the pair-averaged within-between citation ratio. For each year, it compares the mean number of citations between journals within the same tradition to the mean number between journals in different traditions.
+
+```{r ratio}
+fr <- fragmentation_ratio(criminology_panel, normalise = "row")
+print(fr)
+plot(fr)
+```
+
+The `normalise` argument controls how size differences between journals are handled. The four options are `"raw"`, `"row"`, `"target"`, and `"article_pair"`; each answers a slightly different question. Row-normalisation gives each journal equal weight regardless of its publication volume.
+
+# Stage 2: Significance testing
+
+A permutation test evaluates whether the observed ratio is larger than what would be expected under random assignment of journals to traditions, holding the matrix and group sizes fixed.
+
+```{r test}
+pt <- fragmentation_test(criminology_panel, n_perm = 1000L, seed = 42L)
+print(pt)
+plot(pt)
+```
+
+The test is exact when the number of distinct permutations is feasible to enumerate, and Monte Carlo otherwise.
+
+# Stage 3: Robustness checks
+
+Two kinds of robustness check are built in. The first reruns the analysis under alternative group specifications, testing whether the trajectory depends on where the group boundaries are drawn. The second restricts the panel to a fixed subset of nodes, testing whether the trajectory is driven by the entry of new nodes.
+
+```{r robustness}
+data(criminology_alternatives)
+rb <- fragmentation_robustness(
+  criminology_panel,
+  alternatives = criminology_alternatives
+)
+print(rb)
+plot(rb)
+```
+
+# Stage 4: Structural break detection
+
+A piecewise linear regression with a grid-searched breakpoint and bootstrap confidence interval identifies where (if anywhere) the trajectory changes character.
+
+```{r changepoint}
+cp <- fragmentation_changepoint(fr, seed = 42L, n_boot = 500L)
+print(cp)
+plot(cp)
+```
+
+# Directional asymmetry
+
+The fragmentation ratio is symmetric by construction: it does not reveal which group cites which. The `asymmetry()` function addresses this, measuring how unevenly citations flow between two specified groups over time.
+
+```{r asymmetry}
+asy <- asymmetry(
+  criminology_panel,
+  from_group = "Critical/Theoretical",
+  to_group   = "Quant/Empirical"
+)
+print(asy)
+plot(asy)
+```
+
+# References
+
+Vakhitova, Z. (2026). The fragmentation of criminology: a longitudinal citation network analysis. *Manuscript in preparation.*
