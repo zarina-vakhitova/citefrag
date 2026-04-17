@@ -52,5 +52,5 @@ Useful links:
 
 ## Author
 
-**Maintainer**: Zarina Vakhitova <zarina.vakhitova@deakin.edu.au>
-([ORCID](https://orcid.org/0000-0002-2853-7968))
+**Maintainer**: Zarina Vakhitova <zarina.vakhitova@monash.edu>
+([ORCID](https://orcid.org/0000-0003-2708-4585))
