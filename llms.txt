@@ -21,7 +21,7 @@ You can install the development version from GitHub:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("zvakhitova/citefrag")
+remotes::install_github("zarina-vakhitova/citefrag")
 ```
 
 Once the package is on CRAN, installation will be:
