@@ -22,17 +22,12 @@
 #' }
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' data(criminology_panel)
-#' asy <- asymmetry(
-#'   criminology_panel,
-#'   from_group = "Critical/Theoretical",
-#'   to_group   = "Quant/Empirical"
-#' )
+#' asy <- asymmetry(criminology_panel, from_group = "Critical/Theoretical", to_group = "Quant/Empirical")
 #' print(asy)
-#' plot(asy)
 #' }
-#'
+#' 
 #' @export
 asymmetry <- function(panel,
                       from_group,

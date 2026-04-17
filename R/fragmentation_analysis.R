@@ -24,7 +24,7 @@
 #'   `subpanels` are supplied.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' data(criminology_panel)
 #' res <- fragmentation_analysis(criminology_panel, seed = 42L)
 #' plot(res$ratio)

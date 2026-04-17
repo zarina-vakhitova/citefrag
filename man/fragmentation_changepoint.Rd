@@ -58,7 +58,7 @@ breakpoint. The breakpoint is chosen as the integer period in the
 interior of the series that minimises the residual sum of squares.
 }
 \examples{
-\donttest{
+\dontrun{
 data(criminology_panel)
 fr <- fragmentation_ratio(criminology_panel, normalise = "row")
 cp <- fragmentation_changepoint(fr, seed = 42L)

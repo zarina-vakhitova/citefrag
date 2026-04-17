@@ -49,7 +49,9 @@ citation network analysis. *Manuscript in preparation.*
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/zvakhitova/citefrag}
+  \item \url{https://zarina-vakhitova.github.io/citefrag}
+  \item \url{https://github.com/zarina-vakhitova/citefrag}
+  \item \url{https://zarina-vakhitova.github.io/citefrag/}
   \item Report bugs at \url{https://github.com/zvakhitova/citefrag/issues}
 }
 

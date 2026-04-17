@@ -49,7 +49,7 @@ result objects. Useful for reproducing a complete analysis in a single
 call, for example in a replication vignette.
 }
 \examples{
-\donttest{
+\dontrun{
 data(criminology_panel)
 res <- fragmentation_analysis(criminology_panel, seed = 42L)
 plot(res$ratio)

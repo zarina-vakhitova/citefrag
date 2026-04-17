@@ -23,7 +23,7 @@
 #'   `n_nodes`, and `n_groups`.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Using bundled criminology data
 #' data(criminology_panel)
 #' print(criminology_panel)

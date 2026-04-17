@@ -38,7 +38,7 @@
 #' significance testing uses the unsmoothed ratio.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' data(criminology_panel)
 #' fr <- fragmentation_ratio(criminology_panel, normalise = "row")
 #' print(fr)

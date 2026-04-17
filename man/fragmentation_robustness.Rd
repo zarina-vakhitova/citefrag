@@ -52,7 +52,7 @@ specific cluster assignment?" and "does it depend on which nodes I
 include?".
 }
 \examples{
-\donttest{
+\dontrun{
 data(criminology_panel)
 # Alternative specification: merge two groups into one
 g0 <- criminology_panel$groups

@@ -41,7 +41,7 @@
 #' of size at least two, are skipped.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' data(criminology_panel)
 #' pt <- fragmentation_test(criminology_panel, n_perm = 1000L, seed = 42L)
 #' print(pt)

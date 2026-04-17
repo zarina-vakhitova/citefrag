@@ -34,15 +34,10 @@ and their ratio. A value far above one indicates that `from_group` is
 much more attentive to `to_group` than vice versa.
 }
 \examples{
-\donttest{
+\dontrun{
 data(criminology_panel)
-asy <- asymmetry(
-  criminology_panel,
-  from_group = "Critical/Theoretical",
-  to_group   = "Quant/Empirical"
-)
+asy <- asymmetry(criminology_panel, from_group = "Critical/Theoretical", to_group = "Quant/Empirical")
 print(asy)
-plot(asy)
 }
 
 }

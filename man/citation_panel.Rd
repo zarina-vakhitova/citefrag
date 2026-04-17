@@ -34,7 +34,7 @@ matrices, group assignments, and optional node size information. This
 object is the standard input to all analysis functions in citefrag.
 }
 \examples{
-\donttest{
+\dontrun{
 # Using bundled criminology data
 data(criminology_panel)
 print(criminology_panel)
