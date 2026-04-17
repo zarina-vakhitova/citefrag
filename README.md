@@ -4,6 +4,7 @@
 [![R-CMD-check](https://github.com/zvakhitova/citefrag/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zvakhitova/citefrag/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![R-CMD-check](https://github.com/zarina-vakhitova/citefrag/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zarina-vakhitova/citefrag/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **citefrag** measures within-group versus between-group citation preference in longitudinal journal panels. It implements the pair-averaged fragmentation ratio, exact and Monte Carlo permutation tests, directional asymmetry analysis, a suite of robustness checks, and piecewise regression with bootstrap confidence intervals for locating structural breaks in ratio trajectories.
